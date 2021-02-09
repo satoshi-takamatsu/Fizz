@@ -22,16 +22,25 @@ window.addEventListener('load', function(){
       output.appendChild(checker);
     };
 
+    // 記憶の定着の為、コメントアウトしております。下記をelse ifを使ってリファクタリング
+    // if (isNaN(fizzInput) || isNaN(buzzInput)) {
+    //   return errorMessage();
+    // };
+
+    // if ((fizzInput == 0) || (buzzInput == 0)) {
+    //   return errorMessage();
+    // };
+
+    // if (fizzInput.match(/^-?[0-9]+\.[0-9]+$/) || buzzInput.match(/^-?[0-9]+\.[0-9]+$/)) {
+    //   return errorMessage();
+    // };
+
     if (isNaN(fizzInput) || isNaN(buzzInput)) {
       return errorMessage();
-    };
-
-    if ((fizzInput == 0) || (buzzInput == 0)) {
+    } else if ((fizzInput == 0) || (buzzInput == 0)) {
       return errorMessage();
-    };
-
-    if (fizzInput.match(/^-?[0-9]+\.[0-9]+$/) || buzzInput.match(/^-?[0-9]+\.[0-9]+$/)) {
-      return errorMessage();
+    } else if (fizzInput.match(/^-?[0-9]+\.[0-9]+$/) || buzzInput.match(/^-?[0-9]+\.[0-9]+$/)) {
+      return errorMessages();
     };
 
     for (let i = 1; i < 100; i++) {
